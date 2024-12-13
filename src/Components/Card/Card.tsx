@@ -2,6 +2,7 @@ import styles from "./card.module.scss";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 
 const Card = ({ name, amount, value, percent }: cardInter) => {
+  console.log(fetch("../../assets/data.json"));
   const colorCode = (category: string): string => {
     let color: string = "";
     switch (category) {
@@ -35,12 +36,12 @@ const Card = ({ name, amount, value, percent }: cardInter) => {
         style={{
           background: ` conic-gradient(${colorCode(name)} ${
             (Math.abs(percent) / 100) * 360
-          }deg, white 0)`,
+          }deg,white 0deg)`,
           borderRadius: "50%",
           color: colorCode(name),
         }}
       >
-        <div className={styles.percent}>{percent}% </div>
+        <span className={styles.percent}>{percent}% </span>
       </div>
     </div>
   );
