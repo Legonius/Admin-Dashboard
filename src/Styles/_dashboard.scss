@@ -1,0 +1,61 @@
+.dashboard {
+  @include flex(column, start, unset, 2rem);
+  min-height: 100vh;
+  flex: 1;
+  overflow-y: scroll;
+  padding-top: 1rem;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  > .search {
+    @include flex(row, start, center, 1.5rem);
+    height: 3.5rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.135);
+    @include padding(1rem, 0.1rem);
+    > form {
+      width: 100%;
+      @include flex(row, start, center, 1.5rem);
+      flex: 1;
+
+      > button {
+        border: none;
+        background-color: white;
+
+        > svg {
+          font-size: 1.5rem;
+        }
+      }
+      > input {
+        flex: 1;
+        border: none;
+        background-color: transparent;
+        height: 2rem;
+        outline: none;
+        font-size: 1.2rem;
+      }
+    }
+    > div {
+      @include flex(row, center, center, 0.5rem);
+      > svg {
+        font-size: 1.8rem;
+      }
+      > div {
+        @include flex(row, center, center, unset);
+
+        > img {
+          width: 2rem;
+          border-radius: 50%;
+          border: solid 4px $gray;
+          background-position: cover;
+        }
+      }
+    }
+  }
+}
+.cards {
+  width: 100%;
+  @include flex(row, space-between);
+}

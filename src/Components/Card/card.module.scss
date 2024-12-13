@@ -1,0 +1,50 @@
+@import "../../Styles/mixin";
+@import "../../Styles/variables";
+
+.card {
+  @include square(fit-content, auto);
+  min-width: 15rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.19);
+  @include padding();
+  @include flex(row, space-between, center, 1rem);
+}
+.cardLeft {
+  @include flex(column, center, start, 0.2rem);
+}
+.name {
+  font-size: 0.8rem;
+  color: $gray;
+}
+.amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.value {
+  color: $green;
+}
+.valueMinus {
+  color: $red;
+}
+.cardRight {
+  @include flex();
+  overflow: visible;
+}
+.percent {
+  position: relative;
+  @include square(4rem, 4rem);
+  @include flex();
+  border-radius: 50%;
+  //   background: conic-gradient(red 180deg, yellow 0);
+  z-index: 100;
+  &::before {
+    content: "";
+    position: absolute;
+    @include posCenter;
+    background-color: white;
+    border-radius: 50%;
+    @include square(3.2rem, 3.2rem);
+    z-index: -1;
+  }
+}

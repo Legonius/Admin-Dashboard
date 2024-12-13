@@ -1,0 +1,65 @@
+@import "variables.scss";
+@import "mixin.scss";
+@import "utils.scss";
+@import "dashboard.scss";
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: $offWhite;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+//main screen
+.split {
+  @include flex(row, auto, center, 0);
+  height: 100vh;
+
+  > .nav {
+    width: 16%;
+    min-width: 180px;
+    height: 100%;
+    overflow-y: hidden;
+    @include flex(column, start, start, 1rem);
+    @include padding(1rem, 1rem);
+    background-color: white;
+
+    > aside {
+      @include flex(column, center, center, 1.2rem);
+      width: 100%;
+      overflow-y: scroll;
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      > nav {
+        width: 100%;
+        > h2 {
+          @include heading(3px, 700);
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  > .content {
+    flex: 1;
+    min-height: 100vh;
+    @include padding(1rem, 1rem);
+  }
+}
+.active {
+  background-color: rgba(0, 0, 255, 0.118);
+  color: $blue !important;
+}
