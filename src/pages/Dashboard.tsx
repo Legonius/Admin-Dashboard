@@ -1,6 +1,9 @@
 import { FiSearch } from "react-icons/fi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import Card from "../Components/Card/Card";
+import ProcessBar from "../Components/ProcessBar/ProcessBar";
+import data from "../assets/data.json";
+import BarChart from "../Components/BarChart/BarChart";
 
 const Dashboard = () => {
   return (
@@ -29,6 +32,22 @@ const Dashboard = () => {
           percent={60}
         />
         <Card name={"Products"} amount={"$43000"} value={80} percent={70} />
+      </div>
+      <div className="dash-hero">
+        <div className="rnt" style={{ flex: "flex", flexDirection: "column" }}>
+          <h2>Revenue & Transactions</h2>
+          <BarChart />
+        </div>
+        <div className="inv">
+          <h2>Inventory</h2>
+          {data.categories.map((item) => (
+            <ProcessBar
+              key={item.heading}
+              value={item.value}
+              heading={item.heading}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

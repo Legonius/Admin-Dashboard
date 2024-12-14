@@ -1,0 +1,20 @@
+@import "../../Styles/mixin";
+
+.container {
+  width: 100%;
+  @include flex(row, space-between);
+  > span:nth-child(1) {
+    color: gray;
+  }
+  > span:last-child {
+    font-weight: 700;
+  }
+  > div {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 5px;
+    background-color: rgb(182, 180, 180);
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}

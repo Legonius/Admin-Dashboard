@@ -2,7 +2,6 @@ import styles from "./card.module.scss";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 
 const Card = ({ name, amount, value, percent }: cardInter) => {
-  console.log(fetch("../../assets/data.json"));
   const colorCode = (category: string): string => {
     let color: string = "";
     switch (category) {
